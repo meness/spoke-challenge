@@ -1,0 +1,6 @@
+{
+  "*.{js,jsx}": [
+    "prettier:fix",
+    "eslint:fix"
+  ]
+}
