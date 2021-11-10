@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "streetsidesoftware.code-spell-checker",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "cschleiden.vscode-github-actions",
+    "eamodio.gitlens",
+    "orta.vscode-jest",
+    "yzhang.markdown-all-in-one",
+    "pulkitgangwar.nextjs-snippets",
+    "esbenp.prettier-vscode",
+    "wayou.vscode-todo-highlight"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.autoSave": "afterDelay",
+    "cSpell.ignoreWords": [
+        "todos",
+		"toastify",
+		"reduxjs"
+    ],
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/e2e": true,
+        "**/node_modules": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.linkedEditing": true,
+    "html.format.endWithNewline": true,
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "css.lint.compatibleVendorPrefixes": "warning",
+    "css.lint.duplicateProperties": "error",
+    "css.lint.zeroUnits": "warning",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "git.autofetch": true,
+    "eslint.lintTask.enable": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.printWidth": 120,
+    "cSpell.language": "en-US",
+}
