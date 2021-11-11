@@ -1,8 +1,8 @@
-const SAGA_ACTION = {
+const SAGA_TYPE = {
   UPDATE_TASK_STATUS: 'UPDATE_TASK_STATUS',
   FETCH_TASKS: 'FETCH_TASKS',
   EDIT_TASK: 'EDIT_TASK',
   FETCH_TASK: 'FETCH_TASK',
 };
 
-export default SAGA_ACTION;
+export default SAGA_TYPE;

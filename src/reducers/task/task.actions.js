@@ -1,17 +1,17 @@
-import SAGA_ACTION from '../../saga.actions';
+import SAGA_TYPE from '../../saga.types';
 
 export const toggleTaskStatusAction = (taskId, taskStatus) => {
-  return { type: SAGA_ACTION.UPDATE_TASK_STATUS, payload: { taskId, taskStatus } };
+  return { type: SAGA_TYPE.UPDATE_TASK_STATUS, payload: { taskId, taskStatus } };
 };
 
 export const fetchTaskByIdAction = (taskId) => {
-  return { type: SAGA_ACTION.FETCH_TASK, payload: taskId };
+  return { type: SAGA_TYPE.FETCH_TASK, payload: taskId };
 };
 
 export const editTaskAction = (storedTask, taskTitle) => {
-  return { type: SAGA_ACTION.EDIT_TASK, payload: { ...storedTask, title: taskTitle } };
+  return { type: SAGA_TYPE.EDIT_TASK, payload: { ...storedTask, title: taskTitle } };
 };
 
 export const fetchTasksAction = () => {
-  return { type: SAGA_ACTION.FETCH_TASKS };
+  return { type: SAGA_TYPE.FETCH_TASKS };
 };
