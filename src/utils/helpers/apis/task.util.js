@@ -13,3 +13,21 @@ export const fetchTasks = () => {
 export const patchTaskStatus = (taskId, newTaskStatus) => {
   return Http.patch(`todos/${taskId}`, { completed: newTaskStatus });
 };
+
+/**
+ * Edit the given task.
+ *
+ * @param {any} editedTask
+ */
+export const editTask = (editedTask) => {
+  return Http.put(`todos/${editedTask.id}`, editedTask);
+};
+
+/**
+ * Fetch corresponding task.
+ *
+ * @param {number} taskId
+ */
+export const fetchTaskById = (taskId) => {
+  return Http.get(`todos/${taskId}`);
+};
