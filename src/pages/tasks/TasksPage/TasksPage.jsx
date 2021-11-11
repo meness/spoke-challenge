@@ -3,17 +3,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@mui/x-data-grid';
 import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
+import { Title, Done } from '@mui/icons-material';
 import { getTasksSelector } from '../../../reducers/task/task.selector';
 import TaskStatus from '../../../components/elements/TaskStatus';
 import SAGA_ACTION from '../../../saga.actions';
+import IconicText from '../../../components/elements/IconicText';
 
 const columns = [
-  { field: 'title', headerName: 'Title', flex: 1 },
+  {
+    field: 'title',
+    headerName: <IconicText icon={Title} text="Title" />,
+    flex: 1,
+  },
   {
     field: 'status',
-    headerName: 'Status',
-    flex: 1,
-    filterable: false,
+    headerName: <IconicText icon={Done} text="Status" />,
+    flex: 0.2,
     renderCell: ({ row }) => {
       return <TaskStatus taskId={row.id} taskStatus={row.completed} />;
     },
@@ -40,6 +45,7 @@ const TasksPage = () => {
           pageSize={5}
           autoHeight
           autoPageSize
+          disableColumnMenu
           density="comfortable"
           disableSelectionOnClick
         />
