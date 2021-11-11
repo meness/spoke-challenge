@@ -1,4 +1,4 @@
-import { CircularProgress, ToggleButton } from '@mui/material';
+import { CircularProgress, IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { CheckCircle, CheckCircleOutline } from '@mui/icons-material';
@@ -28,9 +28,9 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   };
 
   return (
-    <ToggleButton value={taskStatus} onChange={toggleTaskStatus}>
+    <IconButton value={taskStatus} onClick={toggleTaskStatus}>
       {toggleIcon()}
-    </ToggleButton>
+    </IconButton>
   );
 };
 
