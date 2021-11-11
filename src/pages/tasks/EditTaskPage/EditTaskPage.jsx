@@ -41,7 +41,7 @@ const EditTaskPage = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    dispatch(editTaskAction(storedTask, taskTitle));
+    dispatch(editTaskAction({ ...storedTask, title: taskTitle }));
   };
 
   return (

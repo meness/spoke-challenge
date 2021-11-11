@@ -1,17 +1,10 @@
+import { createAction } from '@reduxjs/toolkit';
 import SAGA_TYPE from '../../saga.types';
 
-export const toggleTaskStatusAction = (taskId, taskStatus) => {
-  return { type: SAGA_TYPE.UPDATE_TASK_STATUS, payload: { taskId, taskStatus } };
-};
+export const toggleTaskStatusAction = createAction(SAGA_TYPE.UPDATE_TASK_STATUS);
 
-export const fetchTaskByIdAction = (taskId) => {
-  return { type: SAGA_TYPE.FETCH_TASK, payload: taskId };
-};
+export const fetchTaskByIdAction = createAction(SAGA_TYPE.FETCH_TASK);
 
-export const editTaskAction = (storedTask, taskTitle) => {
-  return { type: SAGA_TYPE.EDIT_TASK, payload: { ...storedTask, title: taskTitle } };
-};
+export const editTaskAction = createAction(SAGA_TYPE.EDIT_TASK);
 
-export const fetchTasksAction = () => {
-  return { type: SAGA_TYPE.FETCH_TASKS };
-};
+export const fetchTasksAction = createAction(SAGA_TYPE.FETCH_TASKS);

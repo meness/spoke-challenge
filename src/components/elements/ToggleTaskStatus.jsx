@@ -17,7 +17,7 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
     // We don't support undo yet
     if (isPending) return;
 
-    dispatch(toggleTaskStatusAction(taskId, !taskStatus));
+    dispatch(toggleTaskStatusAction({ taskId, taskStatus: !taskStatus }));
     setIsPending(!isPending);
   };
 
