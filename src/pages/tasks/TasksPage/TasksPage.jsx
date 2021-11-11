@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { IconButton, Box, Tooltip, Paper } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { isEmpty } from 'lodash';
 import { getTasksSelector } from '../../../reducers/task/task.selectors';
 import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
 import IconicText from '../../../components/elements/IconicText';
@@ -58,6 +59,9 @@ const TasksPage = () => {
   ];
 
   useEffect(() => {
+    // Prevent from refetching data intentionally
+    if (!isEmpty(storedTasks)) return;
+
     dispatch(fetchTasksAction());
   }, []);
 
