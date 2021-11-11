@@ -17,12 +17,13 @@ const EditTaskPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // Prevent from refetching task intentionally
+    if (!isEmpty(storedTask)) return;
+
     dispatch(fetchTaskByIdAction(taskId));
   }, []);
 
   useEffect(() => {
-    if (isEmpty(storedTask)) return;
-
     setTaskTitle(storedTask.title);
   }, [storedTask]);
 

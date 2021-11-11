@@ -9,14 +9,30 @@ const slice = createSlice({
     setTasks: (state, action) => {
       state.tasks = action.payload;
     },
-    updateTask: (state, action) => {
+    updateTaskStatus: (state, action) => {
       state.tasks = state.tasks.map((task) => {
         if (task.id === action.payload.id) {
-          return action.payload;
+          return { ...task, completed: action.payload.completed };
         }
 
         return task;
       });
+    },
+    updateTaskTitle: (state, action) => {
+      const editedTask = { ...state.task, title: action.payload.title };
+
+      // Update tasks state
+      state.tasks = state.tasks.map((task) => {
+        if (task.id === action.payload.id) {
+          // Set `completed` intentionally to make sure the status doesn't change the first time we fetch the task
+          return { ...editedTask, completed: task.completed };
+        }
+
+        return task;
+      });
+
+      // Update task state
+      state.task = editedTask;
     },
     setTask: (state, action) => {
       state.task = action.payload;
@@ -24,6 +40,6 @@ const slice = createSlice({
   },
 });
 
-export const { setTasks, updateTask, setTask } = slice.actions;
+export const { setTasks, setTask, updateTaskStatus, updateTaskTitle } = slice.actions;
 
 export default slice.reducer;
