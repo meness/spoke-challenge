@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@mui/x-data-grid';
 import { Helmet } from 'react-helmet-async';
-import { IconButton, Box, Tooltip } from '@mui/material';
+import { IconButton, Box, Tooltip, Paper } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { getTasksSelector } from '../../../reducers/task/task.selector';
@@ -64,7 +64,7 @@ const TasksPage = () => {
       <Helmet>
         <title>Tasks</title>
       </Helmet>
-      <Box style={{ height: 400, width: '100%' }}>
+      <Box style={{ height: 400, width: '100%' }} component={Paper}>
         <Box sx={{ display: 'flex', height: '100%' }}>
           <Box flexGrow={1}>
             <DataGrid
