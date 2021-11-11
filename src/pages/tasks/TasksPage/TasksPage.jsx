@@ -31,6 +31,7 @@ const TasksPage = () => {
       width: 100,
       headerAlign: 'center',
       align: 'center',
+      valueGetter: ({ row }) => row.completed,
       renderCell: ({ row }) => {
         return <ToggleTaskStatus taskId={row.id} taskStatus={row.completed} />;
       },
