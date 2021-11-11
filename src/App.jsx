@@ -11,13 +11,13 @@ function App() {
 
 function AppWrapper() {
   return (
-    <GeneralLayout>
-      <Suspense fallback={<CircularLoading />}>
+    <Suspense fallback={<CircularLoading />}>
+      <GeneralLayout>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </Suspense>
-    </GeneralLayout>
+      </GeneralLayout>
+    </Suspense>
   );
 }
 
