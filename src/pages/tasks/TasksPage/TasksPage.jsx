@@ -7,8 +7,8 @@ import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { getTasksSelector } from '../../../reducers/task/task.selectors';
 import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
-import SAGA_ACTION from '../../../saga.actions';
 import IconicText from '../../../components/elements/IconicText';
+import { fetchTasksAction } from '../../../reducers/task/task.actions';
 
 const TasksPage = () => {
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ const TasksPage = () => {
   ];
 
   useEffect(() => {
-    dispatch({ type: SAGA_ACTION.FETCH_TASKS });
+    dispatch(fetchTasksAction());
   }, []);
 
   return (

@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
-import SAGA_ACTION from '../../../saga.actions';
 import { getTaskByIdSelector } from '../../../reducers/task/task.selectors';
+import { editTaskAction, fetchTaskByIdAction } from '../../../reducers/task/task.actions';
 
 const EditTaskPage = () => {
   const storedTask = useSelector(getTaskByIdSelector);
@@ -17,7 +17,7 @@ const EditTaskPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: SAGA_ACTION.FETCH_TASK, payload: taskId });
+    dispatch(fetchTaskByIdAction(taskId));
   }, []);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const EditTaskPage = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    dispatch({ type: SAGA_ACTION.EDIT_TASK, payload: { ...storedTask, title: taskTitle } });
+    dispatch(editTaskAction(storedTask, taskTitle));
   };
 
   return (

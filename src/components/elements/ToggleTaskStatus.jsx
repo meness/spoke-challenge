@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { CheckCircle, CheckCircleOutline } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
-import SAGA_ACTION from '../../saga.actions';
+import { toggleTaskStatusAction } from '../../reducers/task/task.actions';
 
 const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   const [isPending, setIsPending] = useState(false);
@@ -17,7 +17,7 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
     // We don't support undo yet
     if (isPending) return;
 
-    dispatch({ type: SAGA_ACTION.UPDATE_TASK_STATUS, payload: { taskId, taskStatus: !taskStatus } });
+    dispatch(toggleTaskStatusAction(taskId, !taskStatus));
     setIsPending(!isPending);
   };
 
