@@ -1,4 +1,4 @@
-import { Box, TextField } from '@mui/material';
+import { Box, Card, TextField, CardContent } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -45,34 +45,38 @@ const EditTaskPage = () => {
   };
 
   return (
-    <Box component="form" onSubmit={handleFormSubmit} disabled={shouldDisableForm}>
-      <Helmet>
-        <title>Edit Task {taskId}</title>
-      </Helmet>
-      <TextField
-        required
-        fullWidth
-        id="task-title"
-        value={taskTitle}
-        error={isEmpty(taskTitle)}
-        helperText={taskTitleHelperText}
-        label="Task"
-        variant="outlined"
-        autoFocus
-        onChange={(e) => setTaskTitle(e.target.value)}
-        multiline
-      />
-      <LoadingButton
-        loading={false}
-        type="submit"
-        color="secondary"
-        variant="contained"
-        disabled={shouldDisableForm}
-        sx={{ mt: 3, mb: 2 }}
-      >
-        Edit Task
-      </LoadingButton>
-    </Box>
+    <Card>
+      <CardContent>
+        <Box component="form" onSubmit={handleFormSubmit} disabled={shouldDisableForm}>
+          <Helmet>
+            <title>Edit Task {taskId}</title>
+          </Helmet>
+          <TextField
+            required
+            fullWidth
+            id="task-title"
+            value={taskTitle}
+            error={isEmpty(taskTitle)}
+            helperText={taskTitleHelperText}
+            label="Task"
+            variant="outlined"
+            autoFocus
+            onChange={(e) => setTaskTitle(e.target.value)}
+            multiline
+          />
+          <LoadingButton
+            loading={false}
+            type="submit"
+            color="secondary"
+            variant="contained"
+            disabled={shouldDisableForm}
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Edit Task
+          </LoadingButton>
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 
