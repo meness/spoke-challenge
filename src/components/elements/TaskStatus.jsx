@@ -1,8 +1,7 @@
 import { CircularProgress, ToggleButton } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { CheckCircle, CheckCircleOutline } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import SAGA_ACTION from '../../saga.actions';
 
@@ -21,8 +20,8 @@ const TaskStatus = ({ taskId, taskStatus }) => {
 
   const toggleIcon = () => {
     if (isPending) return <CircularProgress />;
-    if (taskStatus) return <CheckCircleIcon color="success" />;
-    return <CheckCircleOutlineIcon color="action" />;
+    if (taskStatus) return <CheckCircle color="success" />;
+    return <CheckCircleOutline color="action" />;
   };
 
   return (
