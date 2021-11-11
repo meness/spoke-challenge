@@ -45,16 +45,19 @@ const TasksPage = () => {
       <Helmet>
         <title>Tasks</title>
       </Helmet>
-      <Box>
+      <Box style={{ height: 400, width: '100%' }}>
+        <Box sx={{ display: 'flex', height: '100%' }}>
+          <Box flexGrow={1}>
         <DataGrid
           rows={storedTasks}
           columns={columns}
           pageSize={10}
-          autoHeight
           disableColumnMenu
           density="comfortable"
           disableSelectionOnClick
         />
+          </Box>
+        </Box>
       </Box>
     </>
   );
