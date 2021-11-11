@@ -1,9 +1,9 @@
 import { CircularProgress } from '@mui/material';
 
-const CircularLoading = () => {
+const AbsoluteLoading = () => {
   return <CircularProgress disableShrink sx={{ position: 'absolute', left: '50%', top: '50%' }} />;
 };
 
-CircularLoading.propTypes = {};
+AbsoluteLoading.propTypes = {};
 
-export default CircularLoading;
+export default AbsoluteLoading;

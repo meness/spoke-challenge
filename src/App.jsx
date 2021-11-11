@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
 import GeneralLayout from './components/layouts/GeneralLayout';
 import ROUTES from './routes';
-import CircularLoading from './components/elements/CircularLoading';
+import AbsoluteLoading from './components/elements/AbsoluteLoading';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
 function AppWrapper() {
   return (
-    <Suspense fallback={<CircularLoading />}>
+    <Suspense fallback={<AbsoluteLoading />}>
       <GeneralLayout>
         <BrowserRouter>
           <App />
