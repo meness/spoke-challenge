@@ -67,7 +67,7 @@ const EditTaskPage = () => {
           <LoadingButton
             loading={false}
             type="submit"
-            color="secondary"
+            color="primary"
             variant="contained"
             disabled={shouldDisableForm}
             sx={{ mt: 3, mb: 2 }}
