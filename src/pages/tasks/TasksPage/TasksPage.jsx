@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { IconButton, Box, Tooltip, Paper } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import { getTasksSelector } from '../../../reducers/task/task.selector';
+import { getTasksSelector } from '../../../reducers/task/task.selectors';
 import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
 import SAGA_ACTION from '../../../saga.actions';
 import IconicText from '../../../components/elements/IconicText';

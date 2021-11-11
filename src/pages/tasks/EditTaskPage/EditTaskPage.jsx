@@ -6,7 +6,7 @@ import { isEmpty } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 import SAGA_ACTION from '../../../saga.actions';
-import { getTaskByIdSelector } from '../../../reducers/task/task.selector';
+import { getTaskByIdSelector } from '../../../reducers/task/task.selectors';
 
 const EditTaskPage = () => {
   const storedTask = useSelector(getTaskByIdSelector);
