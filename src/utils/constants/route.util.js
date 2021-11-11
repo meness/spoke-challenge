@@ -1,6 +1,9 @@
-const ROUTE = {
+export const ROUTE = {
   HOME: '/',
   EDIT_TASK: ':taskId',
 };
 
-export default ROUTE;
+export const ABSOLUTE_ROUTE = {
+  HOME: '/',
+  EDIT_TASK: '/:taskId',
+};

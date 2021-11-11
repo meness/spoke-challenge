@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import ROUTE from './utils/constants/route.util';
+import { ROUTE } from './utils/constants/route.util';
 
 const TasksPage = lazy(() => import('./pages/tasks/TasksPage/TasksPage'));
 const EditTaskPage = lazy(() => import('./pages/tasks/EditTaskPage/EditTaskPage'));
