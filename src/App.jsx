@@ -12,11 +12,11 @@ function App() {
 function AppWrapper() {
   return (
     <Suspense fallback={<AbsoluteLoading />}>
-      <GeneralLayout>
-        <BrowserRouter>
+      <BrowserRouter>
+        <GeneralLayout>
           <App />
-        </BrowserRouter>
-      </GeneralLayout>
+        </GeneralLayout>
+      </BrowserRouter>
     </Suspense>
   );
 }
