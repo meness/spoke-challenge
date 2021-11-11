@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@mui/x-data-grid';
 import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
-import { Title, Done } from '@mui/icons-material';
+import { Title, CheckCircle } from '@mui/icons-material';
+import { Tooltip } from '@mui/material';
 import { getTasksSelector } from '../../../reducers/task/task.selector';
 import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
 import SAGA_ACTION from '../../../saga.actions';
@@ -17,8 +18,14 @@ const columns = [
   },
   {
     field: 'status',
-    headerName: <IconicText icon={Done} text="Status" />,
-    flex: 0.2,
+    headerName: (
+      <Tooltip title="Status" placement="top">
+        <CheckCircle />
+      </Tooltip>
+    ),
+    flex: 1,
+    headerAlign: 'center',
+    align: 'center',
     renderCell: ({ row }) => {
       return <ToggleTaskStatus taskId={row.id} taskStatus={row.completed} />;
     },
