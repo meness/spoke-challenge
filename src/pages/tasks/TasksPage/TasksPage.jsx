@@ -42,9 +42,8 @@ const TasksPage = () => {
         <DataGrid
           rows={storedTasks}
           columns={columns}
-          pageSize={5}
+          pageSize={10}
           autoHeight
-          autoPageSize
           disableColumnMenu
           density="comfortable"
           disableSelectionOnClick
