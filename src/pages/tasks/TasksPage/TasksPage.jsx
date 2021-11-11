@@ -19,6 +19,7 @@ const TasksPage = () => {
       field: 'title',
       headerName: <IconicText icon={Title} text="Title" />,
       flex: 1,
+      sortable: false,
     },
     {
       field: 'status',
