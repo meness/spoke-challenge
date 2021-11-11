@@ -14,6 +14,9 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   }, [taskStatus]);
 
   const toggleTaskStatus = () => {
+    // We don't support undo yet
+    if (isPending) return;
+
     dispatch({ type: SAGA_ACTION.UPDATE_TASK_STATUS, payload: { taskId, taskStatus: !taskStatus } });
     setIsPending(!isPending);
   };
