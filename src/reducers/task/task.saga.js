@@ -11,9 +11,9 @@ export function* fetchTasksSaga() {
   }
 }
 
-export function* updateTaskStatus(action) {
+export function* updateTaskStatusSaga({ payload }) {
   try {
-    const { taskId, taskStatus } = action.payload;
+    const { taskId, taskStatus } = payload;
     const task = yield call(patchTaskStatus, taskId, taskStatus);
     yield put(updateTask(task.data));
   } catch (e) {
