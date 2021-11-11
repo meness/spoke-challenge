@@ -28,7 +28,7 @@ const TasksPage = () => {
           <CheckCircle />
         </Tooltip>
       ),
-      flex: 1,
+      width: 100,
       headerAlign: 'center',
       align: 'center',
       renderCell: ({ row }) => {
@@ -42,7 +42,7 @@ const TasksPage = () => {
           <Edit />
         </Tooltip>
       ),
-      flex: 0.2,
+      width: 100,
       sortable: false,
       headerAlign: 'center',
       align: 'center',
