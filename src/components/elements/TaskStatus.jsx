@@ -19,7 +19,7 @@ const TaskStatus = ({ taskId, taskStatus }) => {
   };
 
   const toggleIcon = () => {
-    if (isPending) return <CircularProgress size={24} />;
+    if (isPending) return <CircularProgress size={24} color="info" />;
     if (taskStatus) return <CheckCircle color="success" />;
     return <CheckCircleOutline color="action" />;
   };
