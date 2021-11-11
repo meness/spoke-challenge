@@ -59,7 +59,7 @@ const TasksPage = () => {
   ];
 
   useEffect(() => {
-    // Prevent from refetching data intentionally
+    // Prevent from refetching tasks intentionally
     if (!isEmpty(storedTasks)) return;
 
     dispatch(fetchTasksAction());
