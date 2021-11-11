@@ -1,7 +1,12 @@
 import { CircularProgress } from '@mui/material';
 
 const AbsoluteLoading = () => {
-  return <CircularProgress disableShrink sx={{ position: 'absolute', left: '50%', top: '50%' }} />;
+  return (
+    <CircularProgress
+      disableShrink
+      sx={{ margin: 'auto', position: 'absolute', left: 0, top: 0, right: 0, bottom: 0 }}
+    />
+  );
 };
 
 AbsoluteLoading.propTypes = {};
