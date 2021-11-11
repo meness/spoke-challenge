@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import Box from '@mui/material/Box';
 import { Title, Done } from '@mui/icons-material';
 import { getTasksSelector } from '../../../reducers/task/task.selector';
-import TaskStatus from '../../../components/elements/TaskStatus';
+import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
 import SAGA_ACTION from '../../../saga.actions';
 import IconicText from '../../../components/elements/IconicText';
 
@@ -20,7 +20,7 @@ const columns = [
     headerName: <IconicText icon={Done} text="Status" />,
     flex: 0.2,
     renderCell: ({ row }) => {
-      return <TaskStatus taskId={row.id} taskStatus={row.completed} />;
+      return <ToggleTaskStatus taskId={row.id} taskStatus={row.completed} />;
     },
   },
 ];

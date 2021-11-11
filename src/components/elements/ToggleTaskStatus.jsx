@@ -5,7 +5,7 @@ import { CheckCircle, CheckCircleOutline } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 import SAGA_ACTION from '../../saga.actions';
 
-const TaskStatus = ({ taskId, taskStatus }) => {
+const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   const [isPending, setIsPending] = useState(false);
   const dispatch = useDispatch();
 
@@ -31,9 +31,9 @@ const TaskStatus = ({ taskId, taskStatus }) => {
   );
 };
 
-TaskStatus.propTypes = {
+ToggleTaskStatus.propTypes = {
   taskId: PropTypes.number.isRequired,
   taskStatus: PropTypes.bool.isRequired,
 };
 
-export default TaskStatus;
+export default ToggleTaskStatus;
