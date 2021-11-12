@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { CircularProgress } from '@mui/material';
 
 const AbsoluteLoading = () => {
@@ -11,4 +12,4 @@ const AbsoluteLoading = () => {
 
 AbsoluteLoading.propTypes = {};
 
-export default AbsoluteLoading;
+export default memo(AbsoluteLoading);

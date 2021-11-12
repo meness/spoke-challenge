@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography, Box, IconButton } from '@mui/material';
 import { GitHub } from '@mui/icons-material';
+import { memo } from 'react';
 
 const GeneralHeader = () => {
   return (
@@ -28,4 +29,4 @@ const GeneralHeader = () => {
 
 GeneralHeader.propTypes = {};
 
-export default GeneralHeader;
+export default memo(GeneralHeader);
