@@ -7,7 +7,7 @@ const GeneralHeader = () => {
     <AppBar position="static">
       <Toolbar variant="dense">
         <Typography variant="h6" color="inherit" component="div">
-          ⚡ Spoke Challenge
+          ⚡ Todo
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <Box>
