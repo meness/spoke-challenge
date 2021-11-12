@@ -3,7 +3,7 @@ import SAGA_TYPE from '../../saga.types';
 
 export const editTaskStatusAction = createAction(SAGA_TYPE.EDIT_TASK_STATUS);
 
-export const fetchTaskByIdAction = createAction(SAGA_TYPE.FETCH_TASK);
+export const fetchTaskAction = createAction(SAGA_TYPE.FETCH_TASK);
 
 export const editTaskAction = createAction(SAGA_TYPE.EDIT_TASK);
 
