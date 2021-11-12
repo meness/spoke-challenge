@@ -1,19 +1,14 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { DataGrid } from '@mui/x-data-grid';
 import { Helmet } from 'react-helmet-async';
 import { IconButton, Box, Tooltip, Paper } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import { isEmpty } from 'lodash';
-import { getTasksSelector } from '../../../reducers/task/task.selectors';
 import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
 import IconicText from '../../../components/elements/IconicText';
-import { fetchTasksAction } from '../../../reducers/task/task.actions';
+import useTasks from '../../../hooks/UseTasks';
 
 const TasksPage = () => {
-  const dispatch = useDispatch();
-  const storedTasks = useSelector(getTasksSelector);
+  const storedTasks = useTasks();
   const navigate = useNavigate();
   const columns = [
     {
@@ -57,13 +52,6 @@ const TasksPage = () => {
       },
     },
   ];
-
-  useEffect(() => {
-    // Prevent from refetching tasks intentionally
-    if (!isEmpty(storedTasks)) return;
-
-    dispatch(fetchTasksAction());
-  }, []);
 
   return (
     <>

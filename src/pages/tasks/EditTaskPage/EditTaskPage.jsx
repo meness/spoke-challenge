@@ -1,27 +1,15 @@
 import { Box, Card, TextField, CardContent } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { isEmpty } from 'lodash';
-import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
-import { getTaskByIdSelector } from '../../../reducers/task/task.selectors';
-import { editTaskAction, fetchTaskByIdAction } from '../../../reducers/task/task.actions';
+import useTask from '../../../hooks/useTask';
 
 const EditTaskPage = () => {
-  const storedTask = useSelector(getTaskByIdSelector);
+  const [storedTask, handleEditTask] = useTask();
   const [taskTitle, setTaskTitle] = useState();
-  const { taskId } = useParams();
   const [shouldDisableForm, setShouldDisableForm] = useState(true);
   const [taskTitleHelperText, setTaskTitleHelperText] = useState();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    // Prevent from refetching task intentionally
-    if (!isEmpty(storedTask)) return;
-
-    dispatch(fetchTaskByIdAction(taskId));
-  }, []);
 
   useEffect(() => {
     setTaskTitle(storedTask.title);
@@ -42,7 +30,7 @@ const EditTaskPage = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    dispatch(editTaskAction({ ...storedTask, title: taskTitle }));
+    handleEditTask({ title: taskTitle });
   };
 
   return (
@@ -50,7 +38,7 @@ const EditTaskPage = () => {
       <CardContent>
         <Box component="form" onSubmit={handleFormSubmit} disabled={shouldDisableForm}>
           <Helmet>
-            <title>Edit Task {taskId}</title>
+            <title>Edit Task</title>
           </Helmet>
           <TextField
             required
