@@ -6,24 +6,24 @@ const slice = createSlice({
   name: 'task',
   initialState,
   reducers: {
-    setTasks: (state, action) => {
-      state.tasks = action.payload;
+    setTasks: (state, { payload }) => {
+      state.tasks = payload;
     },
-    updateTaskStatus: (state, action) => {
+    updateTaskStatus: (state, { payload }) => {
       state.tasks = state.tasks.map((task) => {
-        if (task.id === action.payload.id) {
-          return { ...task, completed: action.payload.completed };
+        if (task.id === payload.id) {
+          return { ...task, completed: payload.completed };
         }
 
         return task;
       });
     },
-    updateTaskTitle: (state, action) => {
-      const editedTask = { ...state.task, title: action.payload.title };
+    updateTaskTitle: (state, { payload }) => {
+      const editedTask = { ...state.task, title: payload.title };
 
       // Update tasks state
       state.tasks = state.tasks.map((task) => {
-        if (task.id === action.payload.id) {
+        if (task.id === payload.id) {
           // Set `completed` intentionally to make sure the status doesn't change the first time we fetch the task
           return { ...editedTask, completed: task.completed };
         }
@@ -34,11 +34,11 @@ const slice = createSlice({
       // Update task state
       state.task = editedTask;
     },
-    setTask: (state, action) => {
-      state.task = action.payload;
+    setTask: (state, { payload }) => {
+      state.task = payload;
     },
-    addTask: (state, action) => {
-      state.tasks.splice(0, 0, action.payload);
+    addTask: (state, { payload }) => {
+      state.tasks.splice(0, 0, payload);
     },
   },
 });
