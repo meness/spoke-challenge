@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Limitation
+- Cannot change the status of added new tasks because the backend doesn't respond with the whole modified object as it does for already added fake data.
+
 ## Available Scripts
 
 In the project directory, you can run:
