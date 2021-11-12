@@ -21,9 +21,9 @@ export function* editTaskStatusSaga({ payload }) {
   }
 }
 
-export function* fetchTaskByIdSaga({ payload }) {
+export function* fetchTaskSaga({ payload }) {
   try {
-    const tasks = yield call(Api.fetchTaskById, payload);
+    const tasks = yield call(Api.fetchTask, payload);
     yield put(setTask(tasks.data));
   } catch (e) {
     // TODO: Implement

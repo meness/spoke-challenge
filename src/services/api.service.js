@@ -20,11 +20,11 @@ const Api = {
   },
 
   /**
-   * Fetch corresponding task.
+   * Fetch a task.
    *
    * @param {number} taskId
    */
-  fetchTaskById: (taskId) => {
+  fetchTask: (taskId) => {
     return Http.get(`todos/${taskId}`);
   },
 
