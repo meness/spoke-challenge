@@ -6,13 +6,13 @@ const Api = {
   },
 
   /**
-   * Patch the status of the given task.
+   * Patch a single field in the given task.
    *
    * @param {number} taskId
-   * @param {boolean} newTaskStatus
+   * @param {object} editedTaskField
    */
-  patchTaskStatus: (taskId, newTaskStatus) => {
-    return Http.patch(`todos/${taskId}`, { completed: newTaskStatus });
+  patchTask: (taskId, editedTaskField) => {
+    return Http.patch(`todos/${taskId}`, editedTaskField);
   },
 
   editTask: (editedTask) => {

@@ -13,8 +13,8 @@ export function* fetchTasksSaga() {
 
 export function* updateTaskStatusSaga({ payload }) {
   try {
-    const { taskId, taskStatus } = payload;
-    const task = yield call(Api.patchTaskStatus, taskId, taskStatus);
+    const { id, ...completed } = payload;
+    const task = yield call(Api.patchTask, id, completed);
     yield put(updateTaskStatus(task.data));
   } catch (e) {
     // TODO: Implement
