@@ -28,7 +28,7 @@ const Api = {
     return Http.get(`todos/${taskId}`);
   },
 
-  addNewTask: (newTask) => {
+  addTask: (newTask) => {
     return Http.post('todos', newTask);
   },
 };

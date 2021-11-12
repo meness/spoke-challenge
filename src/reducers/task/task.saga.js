@@ -41,7 +41,7 @@ export function* editTaskSaga({ payload }) {
 
 export function* addTaskSaga({ payload }) {
   try {
-    const task = yield call(Api.addNewTask, payload);
+    const task = yield call(Api.addTask, payload);
     yield put(addTask(task.data));
   } catch (e) {
     // TODO: Implement
