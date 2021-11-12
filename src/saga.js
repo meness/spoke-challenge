@@ -4,13 +4,13 @@ import {
   editTaskSaga,
   fetchTaskByIdSaga,
   fetchTasksSaga,
-  updateTaskStatusSaga,
+  editTaskStatusSaga,
 } from './reducers/task/task.saga';
 import SAGA_TYPE from './saga.types';
 
 function* mySaga() {
   yield takeLatest(SAGA_TYPE.FETCH_TASKS, fetchTasksSaga);
-  yield takeEvery(SAGA_TYPE.UPDATE_TASK_STATUS, updateTaskStatusSaga);
+  yield takeEvery(SAGA_TYPE.EDIT_TASK_STATUS, editTaskStatusSaga);
   yield takeLatest(SAGA_TYPE.EDIT_TASK, editTaskSaga);
   yield takeLatest(SAGA_TYPE.FETCH_TASK, fetchTaskByIdSaga);
   yield takeLatest(SAGA_TYPE.ADD_TASK, addTaskSaga);

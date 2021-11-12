@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import SAGA_TYPE from '../../saga.types';
 
-export const toggleTaskStatusAction = createAction(SAGA_TYPE.UPDATE_TASK_STATUS);
+export const editTaskStatusAction = createAction(SAGA_TYPE.EDIT_TASK_STATUS);
 
 export const fetchTaskByIdAction = createAction(SAGA_TYPE.FETCH_TASK);
 

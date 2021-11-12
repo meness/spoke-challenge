@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { CheckCircle, CheckCircleOutline } from '@mui/icons-material';
 import { useCallback, useEffect, useState } from 'react';
-import { toggleTaskStatusAction } from '../../reducers/task/task.actions';
+import { editTaskStatusAction } from '../../reducers/task/task.actions';
 
 const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   const [isPending, setIsPending] = useState(false);
@@ -20,7 +20,7 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
     // We don't support undo yet
     if (isPending) return;
 
-    dispatch(toggleTaskStatusAction({ id: taskId, completed: !taskStatus }));
+    dispatch(editTaskStatusAction({ id: taskId, completed: !taskStatus }));
     setIsPending(!isPending);
   };
 

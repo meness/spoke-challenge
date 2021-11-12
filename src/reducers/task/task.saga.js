@@ -11,7 +11,7 @@ export function* fetchTasksSaga() {
   }
 }
 
-export function* updateTaskStatusSaga({ payload }) {
+export function* editTaskStatusSaga({ payload }) {
   try {
     const { id, ...completed } = payload;
     const task = yield call(Api.patchTask, id, completed);
