@@ -5,7 +5,7 @@ import { isEmpty } from 'lodash';
 import { getTaskByIdSelector } from '../reducers/task/task.selectors';
 import { editTaskAction, fetchTaskByIdAction } from '../reducers/task/task.actions';
 
-const useTask = () => {
+const useEditTask = () => {
   const { taskId } = useParams();
   const storedTask = useSelector(getTaskByIdSelector);
   const dispatch = useDispatch();
@@ -28,4 +28,4 @@ const useTask = () => {
   return [storedTask, handleEditTask];
 };
 
-export default useTask;
+export default useEditTask;
