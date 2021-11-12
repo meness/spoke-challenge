@@ -10,7 +10,10 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isPending) setIsPending(false);
+    setIsPending((currentIsPending) => {
+      if (currentIsPending) return !currentIsPending;
+      return currentIsPending;
+    });
   }, [taskStatus]);
 
   const toggleTaskStatus = () => {
