@@ -18,7 +18,7 @@ const slice = createSlice({
         return task;
       });
     },
-    updateTaskTitle: (state, { payload }) => {
+    editTaskTitle: (state, { payload }) => {
       const editedTask = { ...state.task, title: payload.title };
 
       // Update tasks state
@@ -43,6 +43,6 @@ const slice = createSlice({
   },
 });
 
-export const { setTasks, setTask, editTaskStatus, updateTaskTitle, addTask } = slice.actions;
+export const { setTasks, setTask, editTaskStatus, editTaskTitle, addTask } = slice.actions;
 
 export default slice.reducer;

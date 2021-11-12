@@ -1,6 +1,6 @@
 import { put, call } from 'redux-saga/effects';
 import Api from '../../services/api.service';
-import { addTask, setTask, setTasks, editTaskStatus, updateTaskTitle } from './task.slice';
+import { addTask, setTask, setTasks, editTaskStatus, editTaskTitle } from './task.slice';
 
 export function* fetchTasksSaga() {
   try {
@@ -33,7 +33,7 @@ export function* fetchTaskSaga({ payload }) {
 export function* editTaskSaga({ payload }) {
   try {
     const task = yield call(Api.editTask, payload);
-    yield put(updateTaskTitle(task.data));
+    yield put(editTaskTitle(task.data));
   } catch (e) {
     // TODO: Implement
   }
