@@ -31,7 +31,7 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   }, [isPending, taskStatus]);
 
   return (
-    <IconButton value={taskStatus} onClick={toggleTaskStatus}>
+    <IconButton disabled={isPending} value={taskStatus} onClick={toggleTaskStatus}>
       {toggleIcon()}
     </IconButton>
   );
