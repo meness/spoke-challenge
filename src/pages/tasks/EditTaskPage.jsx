@@ -3,7 +3,7 @@ import { LoadingButton } from '@mui/lab';
 import { useEffect, useState } from 'react';
 import { isEmpty } from 'lodash';
 import { Helmet } from 'react-helmet-async';
-import useEditTask from '../../../hooks/useEditTask';
+import useEditTask from '../../hooks/useEditTask';
 
 const EditTaskPage = () => {
   const [storedTask, handleEditTask] = useEditTask();

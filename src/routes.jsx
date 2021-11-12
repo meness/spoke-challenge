@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
-const TasksPage = lazy(() => import('./pages/tasks/TasksPage/TasksPage'));
-const EditTaskPage = lazy(() => import('./pages/tasks/EditTaskPage/EditTaskPage'));
+const TasksPage = lazy(() => import('./pages/tasks/TasksPage'));
+const EditTaskPage = lazy(() => import('./pages/tasks/EditTaskPage'));
 
 const ROUTES = [
   { path: '/', element: <TasksPage /> },

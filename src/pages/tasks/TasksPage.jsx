@@ -4,10 +4,10 @@ import { IconButton, Box, Tooltip, Paper, Button } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
-import IconicText from '../../../components/elements/IconicText';
-import useTasks from '../../../hooks/UseTasks';
-import AddNewTaskModal from '../../../components/elements/AddNewTaskModal';
+import ToggleTaskStatus from '../../components/elements/ToggleTaskStatus';
+import IconicText from '../../components/elements/IconicText';
+import useTasks from '../../hooks/UseTasks';
+import AddNewTaskModal from '../../components/elements/AddNewTaskModal';
 
 const TasksPage = () => {
   const storedTasks = useTasks();
