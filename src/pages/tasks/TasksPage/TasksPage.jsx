@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { IconButton, Box, Tooltip, Paper } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
 import IconicText from '../../../components/elements/IconicText';
 import useTasks from '../../../hooks/UseTasks';
@@ -10,6 +11,7 @@ import useTasks from '../../../hooks/UseTasks';
 const TasksPage = () => {
   const storedTasks = useTasks();
   const navigate = useNavigate();
+  const [tablePageSize, setTablePageSize] = useState(10);
   const columns = [
     {
       field: 'title',
@@ -64,7 +66,9 @@ const TasksPage = () => {
             <DataGrid
               rows={storedTasks}
               columns={columns}
-              pageSize={10}
+              pageSize={tablePageSize}
+              onPageSizeChange={(newPageSize) => setTablePageSize(newPageSize)}
+              rowsPerPageOptions={[10, 25, 50]}
               disableColumnMenu
               density="comfortable"
               disableSelectionOnClick
