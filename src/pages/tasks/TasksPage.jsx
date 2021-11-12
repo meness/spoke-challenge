@@ -17,7 +17,7 @@ const TasksPage = () => {
   const columns = [
     {
       field: 'title',
-      headerName: <IconicText icon={Title} text="Title" />,
+      headerName: <IconicText icon={Title} text="Task" />,
       flex: 1,
       sortable: false,
     },
