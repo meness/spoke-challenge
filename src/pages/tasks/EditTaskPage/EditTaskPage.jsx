@@ -49,6 +49,7 @@ const EditTaskPage = () => {
             helperText={taskTitleHelperText}
             label="Task"
             variant="outlined"
+            placeholder="Write anything…"
             autoFocus
             onChange={(e) => setTaskTitle(e.target.value)}
             multiline
