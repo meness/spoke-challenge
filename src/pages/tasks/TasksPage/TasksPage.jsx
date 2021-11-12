@@ -1,17 +1,19 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { Helmet } from 'react-helmet-async';
-import { IconButton, Box, Tooltip, Paper } from '@mui/material';
+import { IconButton, Box, Tooltip, Paper, Button } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import ToggleTaskStatus from '../../../components/elements/ToggleTaskStatus';
 import IconicText from '../../../components/elements/IconicText';
 import useTasks from '../../../hooks/UseTasks';
+import AddNewTaskModal from '../../../components/elements/AddNewTaskModal';
 
 const TasksPage = () => {
   const storedTasks = useTasks();
   const navigate = useNavigate();
   const [tablePageSize, setTablePageSize] = useState(10);
+  const [isAddNewTaskModalOpen, setIsAddNewTaskModalOpen] = useState(false);
   const columns = [
     {
       field: 'title',
@@ -60,6 +62,11 @@ const TasksPage = () => {
       <Helmet>
         <title>Tasks</title>
       </Helmet>
+      <Box sx={{ marginBlockEnd: 1, display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
+        <Button variant="contained" onClick={() => setIsAddNewTaskModalOpen(true)}>
+          Add New Task
+        </Button>
+      </Box>
       <Box style={{ height: 400, width: '100%' }} component={Paper}>
         <Box sx={{ display: 'flex', height: '100%' }}>
           <Box flexGrow={1}>
@@ -76,6 +83,7 @@ const TasksPage = () => {
           </Box>
         </Box>
       </Box>
+      <AddNewTaskModal open={isAddNewTaskModalOpen} onClose={() => setIsAddNewTaskModalOpen(false)} />
     </>
   );
 };

@@ -37,9 +37,12 @@ const slice = createSlice({
     setTask: (state, action) => {
       state.task = action.payload;
     },
+    addTask: (state, action) => {
+      state.tasks.splice(0, 0, action.payload);
+    },
   },
 });
 
-export const { setTasks, setTask, updateTaskStatus, updateTaskTitle } = slice.actions;
+export const { setTasks, setTask, updateTaskStatus, updateTaskTitle, addTask } = slice.actions;
 
 export default slice.reducer;

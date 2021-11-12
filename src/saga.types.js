@@ -3,6 +3,7 @@ const SAGA_TYPE = {
   FETCH_TASKS: 'FETCH_TASKS',
   EDIT_TASK: 'EDIT_TASK',
   FETCH_TASK: 'FETCH_TASK',
+  ADD_TASK: 'ADD_TASK',
 };
 
 export default SAGA_TYPE;

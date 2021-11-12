@@ -31,3 +31,7 @@ export const editTask = (editedTask) => {
 export const fetchTaskById = (taskId) => {
   return Http.get(`todos/${taskId}`);
 };
+
+export const addNewTask = (newTask) => {
+  return Http.post('todos', newTask);
+};
