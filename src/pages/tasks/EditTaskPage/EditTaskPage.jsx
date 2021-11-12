@@ -8,7 +8,7 @@ import useTask from '../../../hooks/useTask';
 const EditTaskPage = () => {
   const [storedTask, handleEditTask] = useTask();
   const [taskTitle, setTaskTitle] = useState();
-  const [shouldDisableForm, setShouldDisableForm] = useState(true);
+  const [isFormDisabled, setIsFormDisabled] = useState(true);
   const [taskTitleHelperText, setTaskTitleHelperText] = useState();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const EditTaskPage = () => {
   useEffect(() => {
     const isTaskTitleInvalid = isEmpty(taskTitle);
 
-    setShouldDisableForm(isTaskTitleInvalid);
+    setIsFormDisabled(isTaskTitleInvalid);
   }, [taskTitle]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const EditTaskPage = () => {
   return (
     <Card>
       <CardContent>
-        <Box component="form" onSubmit={handleFormSubmit} disabled={shouldDisableForm}>
+        <Box component="form" onSubmit={handleFormSubmit} disabled={isFormDisabled}>
           <Helmet>
             <title>Edit Task</title>
           </Helmet>
@@ -59,7 +59,7 @@ const EditTaskPage = () => {
             type="submit"
             color="primary"
             variant="contained"
-            disabled={shouldDisableForm}
+            disabled={isFormDisabled}
             sx={{ mt: 3, mb: 2 }}
           >
             Edit Task
