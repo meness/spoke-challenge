@@ -9,7 +9,7 @@ const slice = createSlice({
     setTasks: (state, { payload }) => {
       state.tasks = payload;
     },
-    updateTaskStatus: (state, { payload }) => {
+    editTaskStatus: (state, { payload }) => {
       state.tasks = state.tasks.map((task) => {
         if (task.id === payload.id) {
           return { ...task, completed: payload.completed };
@@ -43,6 +43,6 @@ const slice = createSlice({
   },
 });
 
-export const { setTasks, setTask, updateTaskStatus, updateTaskTitle, addTask } = slice.actions;
+export const { setTasks, setTask, editTaskStatus, updateTaskTitle, addTask } = slice.actions;
 
 export default slice.reducer;
