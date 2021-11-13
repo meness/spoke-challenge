@@ -23,8 +23,8 @@ export function* editTaskStatusSaga({ payload }) {
 
 export function* fetchTaskSaga({ payload }) {
   try {
-    const tasks = yield call(Api.fetchTask, payload);
-    yield put(setTask(tasks.data));
+    const task = yield call(Api.fetchTask, payload);
+    yield put(setTask(task.data));
   } catch (e) {
     // TODO: Implement
   }
