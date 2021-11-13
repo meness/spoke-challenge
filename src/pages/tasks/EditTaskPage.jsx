@@ -43,7 +43,7 @@ const EditTaskPage = () => {
             disabled={isFormDisabled}
             sx={{ mt: 3, mb: 2 }}
           >
-            Edit Task
+            Save Changes
           </LoadingButton>
         </Box>
       </CardContent>
