@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { isEmpty } from 'lodash';
-import { getTasksSelector } from '../reducers/task/task.selectors';
+import { selectTasks } from '../reducers/task/task.selectors';
 import { fetchTasksAction } from '../reducers/task/task.actions';
 
 const useTasks = () => {
-  const storedTasks = useSelector(getTasksSelector);
+  const storedTasks = useSelector(selectTasks);
   const dispatch = useDispatch();
 
   useEffect(() => {
