@@ -49,7 +49,7 @@ const TasksPage = () => {
       align: 'center',
       renderCell: ({ row }) => {
         return (
-          <IconButton color="primary" onClick={() => navigate(`${row.id}`, { replace: false })}>
+          <IconButton color="action" onClick={() => navigate(`${row.id}`, { replace: false })}>
             <Edit />
           </IconButton>
         );
