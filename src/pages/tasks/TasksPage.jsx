@@ -16,12 +16,6 @@ const TasksPage = () => {
   const [isAddNewTaskModalOpen, setIsAddNewTaskModalOpen] = useState(false);
   const columns = [
     {
-      field: 'title',
-      headerName: <IconicText icon={Title} text="Task" />,
-      flex: 1,
-      sortable: false,
-    },
-    {
       field: 'status',
       headerName: (
         <Tooltip title="Status" placement="top">
@@ -35,6 +29,12 @@ const TasksPage = () => {
       renderCell: ({ row }) => {
         return <ToggleTaskStatus taskId={row.id} taskStatus={row.completed} />;
       },
+    },
+    {
+      field: 'title',
+      headerName: <IconicText icon={Title} text="Task" />,
+      flex: 1,
+      sortable: false,
     },
     {
       field: 'edit',
