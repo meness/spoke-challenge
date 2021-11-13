@@ -9,6 +9,10 @@
     "yzhang.markdown-all-in-one",
     "pulkitgangwar.nextjs-snippets",
     "esbenp.prettier-vscode",
-    "wayou.vscode-todo-highlight"
+    "aaron-bond.better-comments",
+    "gruntfuggly.todo-tree",
+    "formulahendry.auto-rename-tag",
+    "jasonnutter.search-node-modules",
+    "meganrogge.template-string-converter"
   ]
 }
