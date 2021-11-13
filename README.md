@@ -3,6 +3,7 @@
 [Spoke](https://spoke.ai/) challenged me with a nice challenge, and this project was my solution.
 
 ## Tech-Stack
+
 - React
 - Redux Toolkit
 - Redux-Saga
@@ -16,6 +17,7 @@
 ## Contribution
 
 ### `yarn prepare`
+
 First, prepare [Husky](https://github.com/typicode/husky).
 
 ### `yarn start`
