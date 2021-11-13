@@ -1,7 +1,7 @@
 import { CircularProgress, IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { CheckCircle, CheckCircleOutline } from '@mui/icons-material';
+import { CheckCircle, CircleOutlined } from '@mui/icons-material';
 import { useCallback, useEffect, useState } from 'react';
 import { editTaskStatusAction } from '../../reducers/task/task.actions';
 
@@ -27,7 +27,7 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   const toggleIcon = useCallback(() => {
     if (isPending) return <CircularProgress size={24} color="primary" />;
     if (taskStatus) return <CheckCircle color="primary" />;
-    return <CheckCircleOutline color="primary" />;
+    return <CircleOutlined color="primary" />;
   }, [isPending, taskStatus]);
 
   return (
