@@ -4,7 +4,7 @@
 
 ## Tech-Stack
 - React
-- Redux
+- Redux Toolkit
 - Redux-Saga
 - MUI
 - Axios
