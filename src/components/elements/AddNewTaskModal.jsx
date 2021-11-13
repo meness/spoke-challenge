@@ -17,23 +17,9 @@ const style = {
 };
 
 const AddNewTaskModal = ({ open, onClose }) => {
-  const { handleAddTask, isAdding } = useAddTask();
-  const [taskTitle, setTaskTitle] = useState();
-  const [isFormDisabled, setIsFormDisabled] = useState(true);
+  const { handleAddTask, isAdding, isFormDisabled, taskTitle, setTaskTitle } = useAddTask();
+
   const [taskTitleHelperText, setTaskTitleHelperText] = useState();
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    handleAddTask({ title: taskTitle, userId: 1, completed: false });
-  };
-
-  useEffect(() => {
-    const isTaskTitleInvalid = isEmpty(taskTitle);
-
-    setIsFormDisabled(isTaskTitleInvalid);
-  }, [taskTitle]);
 
   useEffect(() => {
     if (isEmpty(taskTitle)) setTaskTitleHelperText('Task is required');
@@ -55,7 +41,7 @@ const AddNewTaskModal = ({ open, onClose }) => {
           <Typography id="transition-modal-title" variant="h6" component="h2">
             Add New Task
           </Typography>
-          <Box component="form" onSubmit={handleFormSubmit} disabled={isFormDisabled} sx={{ marginBlockStart: 2 }}>
+          <Box component="form" onSubmit={handleAddTask} disabled={isFormDisabled} sx={{ marginBlockStart: 2 }}>
             <TextField
               required
               fullWidth
