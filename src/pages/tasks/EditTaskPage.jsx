@@ -23,6 +23,7 @@ const EditTaskPage = () => {
           </Helmet>
           <TextField
             required
+            color="success"
             fullWidth
             id="task-title"
             value={taskTitle}

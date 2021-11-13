@@ -43,6 +43,7 @@ const AddNewTaskModal = ({ open, onClose }) => {
           </Typography>
           <Box component="form" onSubmit={handleAddTask} disabled={isFormDisabled} sx={{ marginBlockStart: 2 }}>
             <TextField
+              color="success"
               required
               fullWidth
               id="task-title"
