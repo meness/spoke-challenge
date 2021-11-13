@@ -41,7 +41,7 @@ const EditTaskPage = () => {
             color="primary"
             variant="contained"
             disabled={isFormDisabled}
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ marginBlockStart: 3 }}
           >
             Save Changes
           </LoadingButton>
