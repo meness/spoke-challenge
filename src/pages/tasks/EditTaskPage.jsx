@@ -6,37 +6,18 @@ import { Helmet } from 'react-helmet-async';
 import useEditTask from '../../hooks/useEditTask';
 
 const EditTaskPage = () => {
-  const [storedTask, handleEditTask] = useEditTask();
-  const [taskTitle, setTaskTitle] = useState();
-  const [isFormDisabled, setIsFormDisabled] = useState(true);
+  const { handleEditTask, taskTitle, setTaskTitle, isFormDisabled } = useEditTask();
   const [taskTitleHelperText, setTaskTitleHelperText] = useState();
-
-  useEffect(() => {
-    setTaskTitle(storedTask.title);
-  }, [storedTask]);
-
-  useEffect(() => {
-    const isTaskTitleInvalid = isEmpty(taskTitle);
-
-    setIsFormDisabled(isTaskTitleInvalid);
-  }, [taskTitle]);
 
   useEffect(() => {
     if (isEmpty(taskTitle)) setTaskTitleHelperText('Task is required');
     else setTaskTitleHelperText(undefined);
   }, [taskTitle]);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    handleEditTask({ title: taskTitle });
-  };
-
   return (
     <Card>
       <CardContent>
-        <Box component="form" onSubmit={handleFormSubmit} disabled={isFormDisabled}>
+        <Box component="form" onSubmit={handleEditTask} disabled={isFormDisabled}>
           <Helmet>
             <title>Edit Task</title>
           </Helmet>
