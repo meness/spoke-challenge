@@ -17,7 +17,7 @@ const style = {
 };
 
 const AddNewTaskModal = ({ open, onClose }) => {
-  const [handleAddTask] = useAddTask();
+  const { handleAddTask, isAdding } = useAddTask();
   const [taskTitle, setTaskTitle] = useState();
   const [isFormDisabled, setIsFormDisabled] = useState(true);
   const [taskTitleHelperText, setTaskTitleHelperText] = useState();
@@ -71,7 +71,7 @@ const AddNewTaskModal = ({ open, onClose }) => {
               multiline
             />
             <LoadingButton
-              loading={false}
+              loading={isAdding}
               type="submit"
               color="primary"
               variant="contained"
