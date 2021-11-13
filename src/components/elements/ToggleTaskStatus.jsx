@@ -25,9 +25,9 @@ const ToggleTaskStatus = ({ taskId, taskStatus }) => {
   };
 
   const toggleIcon = useCallback(() => {
-    if (isPending) return <CircularProgress size={24} color="info" />;
-    if (taskStatus) return <CheckCircle color="success" />;
-    return <CheckCircleOutline color="action" />;
+    if (isPending) return <CircularProgress size={24} color="primary" />;
+    if (taskStatus) return <CheckCircle color="primary" />;
+    return <CheckCircleOutline color="primary" />;
   }, [isPending, taskStatus]);
 
   return (
