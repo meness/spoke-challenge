@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import useEditTask from '../../hooks/useEditTask';
 
 const EditTaskPage = () => {
-  const { handleEditTask, taskTitle, setTaskTitle, isFormDisabled } = useEditTask();
+  const { handleEditTask, taskTitle, setTaskTitle, isFormDisabled, isEditing } = useEditTask();
   const [taskTitleHelperText, setTaskTitleHelperText] = useState();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const EditTaskPage = () => {
             multiline
           />
           <LoadingButton
-            loading={false}
+            loading={isEditing}
             type="submit"
             color="primary"
             variant="contained"
