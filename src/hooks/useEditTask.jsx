@@ -2,12 +2,12 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useEffect } from 'react';
 import { isEmpty } from 'lodash';
-import { getTaskSelector } from '../reducers/task/task.selectors';
+import { selectTask } from '../reducers/task/task.selectors';
 import { editTaskAction, fetchTaskAction } from '../reducers/task/task.actions';
 
 const useEditTask = () => {
   const { taskId } = useParams();
-  const storedTask = useSelector(getTaskSelector);
+  const storedTask = useSelector(selectTask);
   const dispatch = useDispatch();
 
   useEffect(() => {
