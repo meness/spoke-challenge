@@ -17,6 +17,7 @@ const TasksPage = () => {
   const columns = [
     {
       field: 'status',
+      type: 'boolean',
       headerName: (
         <Tooltip title="Status" placement="top">
           <CheckCircle />
