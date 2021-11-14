@@ -6,6 +6,7 @@ import { ThemeProvider } from '@mui/material';
 import App from './App';
 import store from './store';
 import theme from './theme';
+import './assets/scss/global.scss';
 
 ReactDOM.render(
   <React.StrictMode>

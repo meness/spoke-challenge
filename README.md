@@ -13,6 +13,7 @@
 - Husky
 - Lint-staged
 - Prettier
+- SCSS
 
 ## Contribution
 
