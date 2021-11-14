@@ -1,4 +1,4 @@
-import { DataGrid, GridActionsCellItem } from '@mui/x-data-grid';
+import { GridActionsCellItem } from '@mui/x-data-grid';
 import { Helmet } from 'react-helmet-async';
 import { Box, Tooltip, Paper, Button } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
@@ -8,6 +8,7 @@ import ToggleTaskStatus from '../../components/elements/ToggleTaskStatus';
 import IconicText from '../../components/elements/IconicText';
 import useTasks from '../../hooks/UseTasks';
 import AddNewTaskModal from '../../components/elements/AddNewTaskModal';
+import NoOutlineDataGrid from '../../components/elements/NoOutlineDataGrid';
 
 const TasksPage = () => {
   const { storedTasks, isFetching } = useTasks();
@@ -71,7 +72,7 @@ const TasksPage = () => {
       <Box style={{ height: 400, width: '100%' }} component={Paper}>
         <Box sx={{ display: 'flex', height: '100%' }}>
           <Box flexGrow={1}>
-            <DataGrid
+            <NoOutlineDataGrid
               rows={storedTasks}
               loading={isFetching}
               columns={columns}
