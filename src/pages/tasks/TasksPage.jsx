@@ -10,7 +10,7 @@ import useTasks from '../../hooks/UseTasks';
 import AddNewTaskModal from '../../components/elements/AddNewTaskModal';
 
 const TasksPage = () => {
-  const storedTasks = useTasks();
+  const { storedTasks, isFetching } = useTasks();
   const navigate = useNavigate();
   const [tablePageSize, setTablePageSize] = useState(10);
   const [isAddNewTaskModalOpen, setIsAddNewTaskModalOpen] = useState(false);
@@ -72,6 +72,7 @@ const TasksPage = () => {
           <Box flexGrow={1}>
             <DataGrid
               rows={storedTasks}
+              loading={isFetching}
               columns={columns}
               pageSize={tablePageSize}
               onPageSizeChange={(newPageSize) => setTablePageSize(newPageSize)}
