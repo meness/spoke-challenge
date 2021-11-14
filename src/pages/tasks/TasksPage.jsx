@@ -1,6 +1,6 @@
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridActionsCellItem } from '@mui/x-data-grid';
 import { Helmet } from 'react-helmet-async';
-import { IconButton, Box, Tooltip, Paper, Button } from '@mui/material';
+import { Box, Tooltip, Paper, Button } from '@mui/material';
 import { Title, CheckCircle, Edit } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -37,23 +37,20 @@ const TasksPage = () => {
       sortable: false,
     },
     {
-      field: 'edit',
-      headerName: (
-        <Tooltip title="Edit" placement="top">
-          <Edit />
-        </Tooltip>
-      ),
+      field: 'actions',
+      type: 'actions',
+      getActions: (params) => [
+        <GridActionsCellItem
+          icon={<Edit />}
+          onClick={() => navigate(`${params.id}`, { replace: false })}
+          label="Edit"
+          color="action"
+        />,
+      ],
       width: 100,
       sortable: false,
       headerAlign: 'center',
       align: 'center',
-      renderCell: ({ row }) => {
-        return (
-          <IconButton color="action" onClick={() => navigate(`${row.id}`, { replace: false })}>
-            <Edit />
-          </IconButton>
-        );
-      },
     },
   ];
 
