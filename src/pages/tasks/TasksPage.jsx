@@ -50,7 +50,7 @@ const TasksPage = () => {
             color="action"
           />,
         ],
-        width: 100,
+        width: 80,
         sortable: false,
         headerAlign: 'center',
         align: 'center',
