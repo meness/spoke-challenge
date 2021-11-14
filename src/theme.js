@@ -32,6 +32,16 @@ const myTheme = createTheme({
       main: '#184faf',
     },
   },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          boxShadow: 'rgba(0, 0, 0, 0.1) 0px 3px 10px',
+          borderRadius: '5px',
+        },
+      },
+    },
+  },
 });
 
 export default myTheme;
